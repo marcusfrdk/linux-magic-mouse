@@ -29,9 +29,9 @@ sleep 5s
 **Note that this script worked for me on Ubuntu 18.04 and may not work for you. The script should work without any additional packages. If this does not work, feel free to contact me and I can try to help you out.**
 
 ## Recommendation and best practices
-**1.** Add script to user's root folder (~/scroll.sh)
-**2.** Add an alias for the script, so you only have to write a word in the terminal and the script runs. If you use bash, add an alias to the **.bashrc** file. Example: *alias scroll='sudo ~/scroll.sh'*
-**3.** Add the script to a cron-job, preferably on boot with the **crontab -e** command. Add **@reboot PATH/TO/SCRIPT**
+1. Add script to user's root folder (~/scroll.sh)
+2. Add an alias for the script, so you only have to write a word in the terminal and the script runs. If you use bash, add an alias to the **.bashrc** file. Example: *alias scroll='sudo ~/scroll.sh'*
+3. Add the script to a cron-job, preferably on boot with the **crontab -e** command. Add **@reboot PATH/TO/SCRIPT**
 
 **By doing this it will feel like the mouse is natively supported by the os.**
 
