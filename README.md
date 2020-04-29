@@ -14,7 +14,7 @@ sleep 3s
 echo 'connect [MAC-ADDRESS GOES HERE]' | bluetoothctl
 sleep 5s
 modprobe -r hid-magicmouse
-sudo modprobe hid-magicmouse emulate_scroll_wheel=Y emulate_3button=Y middle_click_3finger=Y scroll_acceleration=Y scroll_speed=12
+modprobe hid-magicmouse emulate_scroll_wheel=Y emulate_3button=Y middle_click_3finger=Y scroll_acceleration=Y scroll_speed=12
 ```
 
 If you have more devices connected, add the following code after the ECHO command as following:
