@@ -1,11 +1,11 @@
 # Apple Magic Mouse 1/2 Support for Linux
-I have for long used Ubuntu Desktop as my primary OS with my Macbook as my secondary, hence the Magic Mouse. I realized Linux doesn't natively support the scroll function on the mouse so I created my own script for adding this support.
+I have used Ubuntu Desktop as my primary OS for some time with my Mac as my secondary OS, hence the Magic Mouse. I realized Linux doesn't natively support the scroll function on the Magic Mouse so I gathered the information I could find online and created my own script to support the Magic Mouse.
 
 ## Precautions
-In order to use this command, you firstly have to know the MAC-address of your device(s) (If you are using more than one bluetooth device), since this script will reboot the bluetooth module on your device and connect to your device(s). The script needs to be in sudo since systemd required admin priviliges.
+In order to use this command, you have to know the MAC-address of your device(s) (If you are using more than one bluetooth device), since this script will reboot the bluetooth module on your device and connect to your device(s). The script needs to be in sudo since bluetoothctl requires sudo priviliges.
 
 ## Installation
-The script is simple, simply copy the code below and paste it in a a BASH-file (.sh extension).
+The script is simple, copy the code blow (or download the *scroll.sh* file from this repo and replace with your devices MAC-address) and paste it in a a BASH-file (.sh extension).
 
 ```
 /etc/init.d/bluetooth stop
