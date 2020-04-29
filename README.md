@@ -26,6 +26,8 @@ echo 'connect *[ANOTHER MAC-ADDRESS]*' | bluetoothctl
 sleep 5s
 ```
 
+*This can be repeated as many times as you want for as many devices as you have*
+
 **Note that this script worked for me on Ubuntu 18.04 and may not work for you. The script should work without any additional packages. If this does not work, feel free to contact me and I can try to help you out.**
 
 ## Recommendation and best practices
