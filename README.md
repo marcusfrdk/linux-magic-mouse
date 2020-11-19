@@ -1,4 +1,4 @@
-# Ubuntu 18.04 Magic Mouse 1 and 2 Support
+# Apple Magic Mouse 1 and 2 Support For Ubuntu 18.04
 I've been using Ubuntu Desktop as my primary OS for some time. And the mouse I've been using has been the Apple Magic Mouse 2, which Ubuntu does not natively support. I gathered as much information as I could and created this script to solve that problem.
 
 ## Requirements
