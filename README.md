@@ -1,40 +1,28 @@
-# Apple Magic Mouse 1/2 Support for Linux
-I have used Ubuntu Desktop as my primary OS for some time with my Mac as my secondary OS, hence the Magic Mouse. I realized Linux doesn't natively support the scroll function on the Magic Mouse so I gathered the information I could find online and created my own script to support the Magic Mouse.
+# Ubuntu 18.04 Magic Mouse 1 and 2 Support
+I've been using Ubuntu Desktop as my primary OS for some time. And the mouse I've been using has been the Apple Magic Mouse 2, which Ubuntu does not natively support. I gathered as much information as I could and created this script to solve that problem.
 
-## Precautions
-In order to use this command, you have to know the MAC-address of your device(s) (If you are using more than one bluetooth device), since this script will reboot the bluetooth module on your device and connect to your device(s). The script needs to be in sudo since bluetoothctl requires sudo priviliges.
+## Requirements
+- The device(s) MAC-address
+- Apple Magic Mouse 1 or 2
+- Ubuntu 18.04 (Maybe 20.04?)
 
-## Installation
-The script is simple, copy the code blow (or download the *scroll.sh* file from this repo and replace with your devices MAC-address) and paste it in a a BASH-file (.sh extension).
-
+## How to use
+**1. Download or copy the scroll.sh file**<br/>
+**2. Run the following commands:**
 ```
-/etc/init.d/bluetooth stop
-/etc/init.d/bluetooth start
-sleep 3s
-echo 'connect [MAC-ADDRESS GOES HERE]' | bluetoothctl
-sleep 5s
-modprobe -r hid-magicmouse
-modprobe hid-magicmouse emulate_scroll_wheel=Y emulate_3button=Y middle_click_3finger=Y scroll_acceleration=Y scroll_speed=12
+$ chmod +x ./scroll.sh
+$ sudo ./scroll.sh # sudo is required to access the bluetooth.service
 ```
-
-If you have more devices connected, add the following code after the ECHO command as following:
-
+**3. Adding multiple devices (optional):**<br/>
+In order to add multiple devices add the following code after line 4 (repeat for each connected bluetooth device):
 ```
-...
 sleep 1s
-echo 'connect *[ANOTHER MAC-ADDRESS]*' | bluetoothctl
+echo 'connect MAC-ADDRESS-OF-DEVICE' | bluetoothctl
 sleep 5s
 ```
+If you are using multiple bluetooth devices, add each separate device to the script. Since the script will disconnect all current devices.
 
-*This can be repeated as many times as you want for as many devices as you have*
-
-**Note that this script worked for me on Ubuntu 18.04 and may not work for you. The script should work without any additional packages. If this does not work, feel free to contact me and I can try to help you out.**
-
-## Recommendation and best practices
-1. Add script to **user's root folder** (*~/scroll.sh*)
-2. Add an alias for the script, so you only have to write a word in the terminal and the script runs. If you use bash, add an alias to the **.bashrc** file. Example: *alias scroll='sudo ~/scroll.sh'*
-3. Add the script to a cron-job, preferably on boot with the **crontab -e** command. Add **@reboot PATH/TO/SCRIPT**
-
-**By doing this it will feel like the mouse is natively supported by the os.**
-
-Hope this helps you! If not, contact me and tell me what's wrong and I might be able to help you.
+## Personal Best Practices
+- Adding a simple alias for the script like **alias scroll='/path/to/script/scroll.sh'** to the **.bashrc** file.
+- Place the file in the user's root folder **~/scroll.sh**.
+- Add the script to a cron-job, preferably on boot with the **crontab -e** command. Add **@reboot PATH/TO/SCRIPT** to the bottom of the script.
