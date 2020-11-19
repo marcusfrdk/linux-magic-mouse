@@ -9,9 +9,11 @@ I've been using Ubuntu Desktop as my primary OS for some time. And the mouse I'v
 ## How to use
 **1. Download or copy the scroll.sh file**<br/>
 **2. Run the following commands:**
+
+Run the script using sudo, this is required in order to control the bluetooth service, otherwise the script will fail.
 ```
 $ chmod +x ./scroll.sh
-$ sudo ./scroll.sh # sudo is required to access the bluetooth.service
+$ sudo ./scroll.sh
 ```
 **3. Adding multiple devices (optional):**<br/>
 In order to add multiple devices add the following code after line 4 (repeat for each connected bluetooth device):
